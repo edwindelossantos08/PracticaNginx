@@ -1,0 +1,15 @@
+# Define el servicio del servidor web Nginx para correr en local
+services:
+  web:
+    # Imagen oficial de Nginx en su variante ligera Alpine
+    image: nginx:alpine
+    container_name: practica-nginx
+    # Mapea el puerto 8080 del host al puerto 80 del contenedor
+    ports:
+      - "8080:80"
+    # Monta el directorio local src dentro del directorio que Nginx sirve por defecto
+    # :ro = solo lectura, el contenedor no debe modificar nuestros archivos
+    volumes:
+      - ./src:/usr/share/nginx/html:ro
+    # Reinicia el contenedor salvo que se detenga manualmente
+    restart: unless-stopped
