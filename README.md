@@ -3,6 +3,8 @@
 Servidor web Nginx corriendo en local mediante Docker Compose. Sirve una
 página estática "Hola Mundo" desde el directorio `src/`.
 
+> Práctica de despliegue de un servidor web estático con contenedores.
+
 ## Estructura
 
 ```
